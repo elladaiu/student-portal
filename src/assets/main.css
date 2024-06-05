@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-title {
+  @apply tw-text-[30px] tw-font-bold
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 50px repeat(7, 1fr);
+  @apply tw-h-full tw-overflow-auto;
+}
+
+.calendar-grid .calendar-grid-day {
+  @apply tw-p-4 tw-text-gray-500 tw-text-center tw-text-sm tw-capitalize;
+}
+
+.calendar-grid-cell {
+  @apply tw-relative;
+}
+
+.calendar-grid .calendar-grid-cell {
+  @apply tw-border-b-[1px] tw-border-gray-200 tw-border-r-[1px] tw-h-16;
+}
+
+.calendar-grid-event {
+  @apply tw-absolute tw-w-full tw-p-2 tw-text-white tw-rounded tw-text-sm tw-font-medium;
+}
+
+.calendar-grid>div:first-child {
+  @apply tw-border-b-[1px] tw-border-gray-200 tw-border-r-[1px];
+}
+
+.calendar-grid>div:nth-child(8n + 2) {
+  @apply tw-border-l-[1px] tw-border-gray-200;
+}
+
+.calendar-grid>div:not(:first-child) {
+  @apply tw-border-b-[1px] tw-border-gray-200 tw-border-r-[1px];
+}
+
+.calendar-grid .calendar-grid-hour-container {
+  @apply tw-relative;
+}
+
+.calendar-grid .calendar-grid-hour {
+  @apply tw-absolute tw-text-gray-500 tw-text-xs tw-top-[-9px] tw-left-0 tw-bg-white tw-pr-[4px];
+}
